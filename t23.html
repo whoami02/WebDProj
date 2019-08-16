@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>23.Wireless Hacking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style media="screen">
+    body{
+      background-image: url(Fog-Feel2.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
+  </head>
+  <link rel="stylesheet" href="text_tut.css">
+  </head>
+  <body>
+    <hr>
+    <center><div class="y"><h1>Wireless Hacking</h1></div></center>
+    <hr><div class="b">
+    <p>A wireless network is a set of two or more devices connected with each other via radio waves within a limited space range. The devices in a wireless network have the freedom to be in motion, but be in connection with the network and share data with other devices in the network. One of the most crucial point that they are so spread is that their installation cost is very cheap and fast than the wire networks.
+</p>
+
+  <p>Wireless networks are widely used and it is quite easy to set them up. They use IEEE 802.11 standards. A wireless routeris the most important device in a wireless network that connects the users with the Internet.
+</p>
+  ￼
+  <p>In a wireless network, we have <b>Access Points</b> which are extensions of wireless ranges that behave as logical switches.
+</p>
+  ￼
+  <p>Although wireless networks offer great flexibility, they have their security problems. A hacker can sniff the network packets without having to be in the same building where the network is located. As wireless networks communicate through radio waves, a hacker can easily sniff the network from a nearby location.
+</p>
+
+  <p>Most attackers use network sniffing to find the SSID and hack a wireless network. When our wireless cards are converted in sniffing modes, they are called monitor mode.
+</p>
+</div>
+  <hr>
+  <center><div class="x"><h2>  Kismet</h2></div></center>
+  <hr><div class="b">
+  <p>  Kismet is a powerful tool for wireless sniffing that is found in Kali distribution. It can also be downloaded from its official webpage −
+    <a href="https://www.kismetwireless.net/index.shtml"><font color="red">https://www.kismetwireless.net/index.shtml</font></a>
+</p>
+
+  <p>Let’s see how it works. First of all, open a terminal and type <b>kismet</b>. Start the Kismet Server and click Yes, as shown in the following screenshot.
+</p>
+  ￼
+
+  <p>As shown here, click the Start button.
+</p>
+  ￼
+
+  <p>Now, Kismet will start to capture data.  The following screenshot shows how it would appear −
+</p>
+￼</div>
+<hr>
+<center><div class="x"><h2>NetStumbler</h2></div></center>
+<hr><div class="b">
+<p>NetStumbler is another tool for wireless hacking that is primarily meant for Windows systems. It can be downloaded from http://www.stumbler.net/
+</p>
+
+<p>It is quite easy to use NetStumbler on your system. You just have to click the Scanning button and wait for the result, as shown in the following screenshot.
+</p>
+￼
+
+<p>It should display a screenshot as follows −
+</p>
+￼
+
+<p>It is important to note that your card should support monitoring mode, otherwise you will fail to monitor.
+</p>
+</div>
+<hr>
+<center><div class="x"><h2>Wired Equivalent Privacy</h2></div></center>
+<hr><div class="b">
+<p>Wired Equivalent Privacy (WEP) is a security protocol that was invented to secure wireless networks and keep them private. It utilizes encryption at the data link layer which forbids unauthorized access to the network.
+</p>
+
+<p>The key is used to encrypt the packets before transmission begins. An integrity check mechanism checks that the packets are not altered after transmission.
+</p>
+
+<p>Note that WEP is not entirely immune to security problems. It suffers from the following issues −
+</p>
+
+<li>CRC32 is not sufficient to ensure complete cryptographic integrity of a packet.
+</li>
+
+<li>It is vulnerable to dictionary attacks.
+</li>
+
+<li>WEP is vulnerable to Denial of Services attacks too.
+</li>
+
+</div>
+<hr>
+<center><div class="x"><h2>WEPcrack</h2></div></center>
+<hr><div class="b">
+<p>WEPcrack is a popular tool to crack WEP passwords. It can be downloaded from − https://sourceforge.net/projects/wepcrack/
+</p>
+￼</div>
+<hr>
+<center><div class="x"><h2>Aircrack-ng</h2></div></center>
+<hr><div class="b">
+<p>Aircrak-ng is another popular tool for cracking WEP passwords. It can be found in the Kali distribution of Linux.
+</p>
+
+<p>The following screenshot shows how we have sniffed a wireless network and collected packets and created a file RHAWEP-01.cap. Then we run it with aircrack-ng to decrypt the cypher.
+</p>
+￼</div>
+<hr>
+<center><div class="x"><h2>Wireless DoS Attacks </h2></div></center>
+<hr><div class="b">
+<p>In a wireless environment, an attacker can attack a network from a distance and therefore, it is sometimes difficult to collect evidences against the attacker.
+</p>
+
+<p>The first type of DoS is <b>Physical Attack.</b> This type of attack is very basic and it is in the base of radio interferences which can be created even from cordless phones that operate in 2.4 GHz range.
+</p>
+
+<p>Another type is <b>Network DoS Attack.</b> As the Wireless Access Point creates a shared medium, it offers the possibility to flood the traffic of this medium toward the AP which will make its processing more slow toward the clients that attempt to connect. Such attacks can be created just by a ping flood DoS attack.
+</p>
+
+<p>Pyloris is a popular DoS tool that you can download from − https://sourceforge.net/projects/pyloris/
+</p>
+
+<p>Low Orbit Ion Cannon (LOIC) is another popular tool for DoS attacks.
+</p>
+￼</div>
+<hr>
+<center><div class="x"><h2>Quick Tips</h2></div></center>
+<hr><div class="b">
+<p>To secure a wireless network, you should keep the following points in mind −
+</p>
+
+<li>Change the SSID and the network password regularly.
+</li>
+
+<li>Change the default password of access points.
+</li>
+
+<li>Don’t use WEP encryption.
+</li>
+
+<li>Turn off guest networking.
+</li>
+
+<li>Update the firmware of your wireless device.
+</li>
+</div>
+<hr>
+  </body>
+</html>

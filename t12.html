@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>12. Sniffing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style media="screen">
+    body{
+      background-image: url(th2FVDYJ4X.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
+  </head>
+  <link rel="stylesheet" href="text_tut.css">
+  <body>
+    <hr>
+    <center><div class="x"><h1>Sniffing </h1></div></center>
+    <hr><div class="b">
+    <p>Sniffing is the process of monitoring and capturing all the packets passing through a given network using sniffing tools. It is a form of “tapping phone wires” and get to know about the conversation. It is also called <font color="red">wiretapping</font> applied to the computer networks.
+    </p>
+
+     <p>There is so much possibility that if a set of enterprise switch ports is open, then one of their employees can sniff the whole traffic of the network. Anyone in the same physical location can plug into the network using Ethernet cable or connect wirelessly to that network and sniff the total traffic.
+     </p>
+
+      <p>In other words, Sniffing allows you to see all sorts of traffic, both protected and unprotected. In the right conditions and with the right protocols in place, an attacking party may be able to gather information that can be used for further attacks or to cause other issues for the network or system owner.
+      </p>
+</div>
+      <hr>
+      <center><div class="x"><h1>What can be sniffed?</h1> </div> </center>
+      <hr><div class="b">
+      <p>One can sniff the following sensitive information from a network −
+      </p>
+
+       <ul>
+      <li>Email traffic</li>
+
+       <li>FTP passwords</li>
+
+       <li>Web traffics</li>
+
+        <li>Telnet passwords</li>
+
+        <li>Router configuration</li>
+
+        <li>Chat sessions</li>
+
+        <li>DNS traffic</li>
+      </ul>
+        </div><hr>
+
+        <center><div class="x"><font color="#ff0000"><h1>How it works</h1></font></div></center>
+        <hr>
+<div class="b"><font color="#12ff00">
+        <p>A sniffer normally turns the NIC of the system to the <font color="red">promiscuous mode</font> so that it listens to all the data transmitted on its segment.
+        </p>
+
+        <p>Promiscuous mode refers to the unique way of Ethernet hardware, in particular, network interface cards (NICs), that allows an NIC to receive all traffic on the network, even if it is not addressed to this NIC. By default, a NIC ignores all traffic that is not addressed to it, which is done by comparing the destination address of the Ethernet packet with the hardware address (a.k.a. MAC) of the device. While this makes perfect sense for networking, non-promiscuous mode makes it        difficult to use network monitoring and analysis software for diagnosing connectivity issues or traffic accounting.
+      </p>
+￼</font>
+
+        <p>A sniffer can continuously monitor all the traffic to a computer through the NIC by decoding the information encapsulated in the data packets.
+        </p></div>
+        <hr>
+        <center><div class="x"><h1>Types of Sniffing</h1></div></center>
+        <hr><div class="b">
+        <p>Sniffing can be either Active or Passive in nature.
+       </p>
+       <hr>
+       <ol>
+         <li>Passive Sniffing
+
+       <p>In passive sniffing, the traffic is locked but it is not altered in any way. Passive sniffing allows listening only. It works with Hub devices. On a hub device, the traffic is sent to all the ports. In a network that uses
+         hubs to connect systems, all hosts on the network can see the traffic. Therefore, an attacker can easily capture traffic going through.
+       </p>
+
+        <p>The good news is that hubs are almost obsolete nowadays. Most modern networks use switches. Hence, passive sniffing is no more effective.
+        </p></li>
+        <hr>
+        <li>Active Sniffing
+        <hr>
+        <p>In active sniffing, the traffic is not only locked and monitored, but it may also be altered in some way as determined by the attack. Active sniffing is used to sniff a switch-based network. It involves injecting <font color="red">address resolution packets</font>(ARP) into a target network to flood on the switch <font color="red">content addressable memory</font>(CAM) table. CAM keeps track of which host is connected to which port.
+       </p>
+
+        <p>Following are the Active Sniffing Techniques −
+      </p>
+
+        <ul>
+        <li>MAC Flooding</li>
+
+        <li>DHCP Attacks</li>
+
+        <li>DNS Poisoning</li>
+
+        <li>Spoofing Attacks</li>
+
+        <li>ARP Poisoning</li>
+        </li></ul>
+      </ol>
+</div><hr>
+        <center><div class="x"><h1>Protocols which are affected</h1></div></center>
+        <hr><div class="b">
+        <p>Protocols such as the tried and true TCP/IP were never designed with security in mind and therefore do not offer much resistance to potential intruders. Several rules lend themselves to easy sniffing −
+        </p>
+
+        <ul>
+        <li><font color="red">HTTP</font> − It is used to send information in the clear text without any encryption and thus a real target.</li>
+
+        <li><font color="red">SMTP</font> (Simple Mail Transfer Protocol) − SMTP is basically utilized in the transfer of emails. This protocol is efficient, but it does not include any protection against sniffing.</li>
+
+
+        <li><font color="red">NNTP</font> (Network News Transfer Protocol)− It is used for all types of communications, but its main drawback is that data and even passwords are sent over the network as clear text..</li>
+
+
+        <li><font color="red">POP</font> (Post Office Protocol) − POP is strictly used to receive emails from the servers. This protocol does not include protection against sniffing because it can be trapped.</li>
+
+
+        <li><font color="red">FTP</font> (File Transfer Protocol) − FTP is used to send and receive files, but it does not offer any security features. All the data is sent as clear text that can be easily sniffed.</li>
+
+
+        <li><font color="red">IMAP</font> (Internet Message Access Protocol) − IMAP is same as SMTP in its functions, but it is highly vulnerable to sniffing.</li>
+
+
+        </li><font color="red">Telnet</font> − Telnet sends everything (usernames, passwords, keystrokes) over the network as clear text and hence, it can be easily sniffed.</li>
+      </ul>
+
+        <p>Sniffers are not the dumb utilities that allow you to view only live traffic. If you really want to analyze each packet, save the capture and review it whenever time allows.
+        </p>
+</div>
+        <hr>
+        <center><div class="x"><h1>Hardware Protocol Analyzers</h1></div></center>
+        <hr><div class="b">
+        <p>Before we go into further details of sniffers, it is important that we discuss about <font color="red">hardware protocol analyzers.</font> These devices plug into the network at the hardware level and can monitor traffic without manipulating it.
+
+        <p>Hardware protocol analyzers are used to monitor and identify malicious network traffic generated by hacking software installed in the system.
+        </p>
+
+        <p>They capture a data packet, decode it, and analyze its content according to certain rules.
+        </p>
+
+        <p>Hardware protocol analyzers allow attackers to see individual data bytes of each packet passing through the cable.
+        </p>
+
+        <p>These hardware devices are not readily available to most ethical hackers due to their enormous cost in many cases.
+        </p></div>
+        <hr>
+        <center><div class="x"><h1>Lawful Interception</h1></div></center>
+        <hr><div class="b">
+        <p>Lawful Interception (LI) is defined as legally sanctioned access to communications network data such as telephone calls or email messages. LI must always be in pursuance of a lawful authority for the purpose of analysis or evidence. Therefore, LI is a security process in which a network operator or service provider gives law enforcement officials permission to access private communications of individuals or organizations.
+        </p>
+
+        <p>Almost all countries have drafted and enacted legislation to regulate lawful interception procedures; standardization groups are creating LI technology specifications. Usually, LI activities are taken for the purpose of infrastructure protection and cyber security. However, operators of private network infrastructures can maintain LI capabilities within their own networks as an inherent right, unless otherwise prohibited.
+        </p>
+
+        <p>LI was formerly known as <font color="red">wiretappingand</font> has existed since the inception of electronic communications.
+        </p>
+</div>
+
+  </body>
+</html>

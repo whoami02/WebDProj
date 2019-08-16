@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>18.Metasploit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style media="screen">
+    body{
+      background-image: url(Fog-Feel.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
+  </head>
+  <link rel="stylesheet" href="text_tut.css">
+  <body>
+    <hr>
+    <center><div class="y"><h1>Metasploit</h1></div></center>
+    <hr><div class="b">
+    <p>Metasploit is one of the most powerful exploit tools. Most of its resources can be found at:<a href="https://www.metasploit.com"> <font color="red"> https://www.metasploit.com</font></a>. It comes in two versions − commercial and free edition. There are no major differences in the two versions, so in this tutorial, we will be mostly using the Community version (free) of Metasploit.
+</p>
+
+<p>As an Ethical Hacker, you will be using “Kali Distribution” which has the Metasploit community version embedded in it along with other ethical hacking tools. But if you want to install Metasploit as a separate tool, you can easily do so on systems that run on Linux, Windows, or Mac OS X.
+</p>
+
+<p>The hardware requirements to install Metasploit are −
+</p>
+
+<li>2 GHz+ processor</li>
+
+<li>1 GB RAM available</li>
+
+<li>1 GB+ available disk space</li>
+
+<p>Matasploit can be used either with command prompt or with Web UI.
+</p>
+
+<p>To open in Kali, go to Applications → Exploitation Tools → metasploit.
+</p>
+￼
+
+<p>After Metasploit starts, you will see the following screen. Highlighted in red underline is the version of Metasploit.
+</p>
+￼</div>
+<hr>
+<center><div class="x"><h2>Exploits of Metasploit</h2></div></center>
+<hr><div class="b">
+<p>From Vulnerability Scanner, we found that the Linux machine that we have for test is vulnerable to FTP service. Now, we will use the exploit that can work for us. The command is −
+</p>
+
+<p>use “exploit path”
+</p>
+
+<p>The screen will appear as follows −
+</p>
+￼
+
+<p>Then type <b>mfs> show options</b> in order to see what parameters you have to set in order to make it functional. As shown in the following screenshot, we have to set RHOST as the “target IP”.
+</p>
+￼
+
+<p>We type <b>msf> set RHOST 192.168.1.101 and msf>set RPORT 21</b>
+</p>
+￼
+
+<p>Then, type <b>mfs>run.</b> If the exploit is successful, then it will open one session that you can interact with, as shown in the following screenshot, we have to set RHOST as the “target IP”.
+</p>
+￼</div>
+<hr>
+<center><div class="x"><h2>Metasploit Payloads</h2></div></center>
+<hr><div class="b">
+<p>Payload, in simple terms, are simple scripts that the hackers utilize to interact with a hacked system. Using payloads, they can transfer data to a victim system.
+</p>
+
+<p>Metasploit payloads can be of three types −
+</p>
+
+<li>Singles − Singles are very small and designed to create some kind of communication, then move to the next stage. For example, just creating a user.
+</li>
+
+<li>Staged − It is a payload that an attacker can use to upload a bigger file onto a victim system.
+</li>
+
+<li>Stages − Stages are payload components that are downloaded by Stagers modules. The various payload stages provide advanced features with no size limits such as Meterpreter and VNC Injection.
+</li>
+</div>
+<hr>
+<center><div class="x"><h2>Payload Usage − Example</h2></div></center>
+<hr><div class="b">
+   <p>We use the command show payloads. With this exploit, we can see the payloads that we can use, and it will also show the payloads that will help us upload /execute files onto a victim system.
+</p>
+￼￼
+
+<p>To set the payload that we want, we will use the following command −
+</p>
+
+<p>set PAYLOAD payload/path
+</p>
+
+<p>Set the listen host and listen port (LHOST, LPORT) which are the <b>attacker IP</b> and <b>port.</b> Then set remote host and port (RPORT, LHOST) which are the victim IPand port.
+</p>
+￼
+
+<p>Type “exploit”. It will create a session as shown below −
+</p>
+￼
+
+<p>Now we can play with the system according to the settings that this payload offers.
+</p>
+</div>
+<hr>
+  </body>
+</html>

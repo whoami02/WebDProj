@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>26. Cross Site Scripting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style media="screen">
+    body{
+      background-image: url(Fog-Feel2.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
+  </head>
+  <link rel="stylesheet" href="text_tut.css">
+  </head>
+  <body>
+    <hr>
+    <center><div class="y"><h1>Cross Site Scripting </h1></div></center>
+    <hr><div class="b">
+    <p>Cross-site scripting (XSS) is a code injection attack that allows an attacker to execute malicious JavaScript in another user's browser.
+</p>
+
+<p>The attacker does not directly target his victim. Instead, he exploits a vulnerability in a website that the victim visits, in order to get the website to deliver the malicious JavaScript for him. To the victim's browser, the malicious JavaScript appears to be a legitimate part of the website, and the website has thus acted as an unintentional accomplice to the attacker. These attacks can be carried out using HTML, JavaScript, VBScript, ActiveX, Flash, but the most used XSS is malicious JavaScript.
+</p>
+
+<p>These attacks also can gather data from account hijacking, changing of user settings, cookie theft/poisoning, or false advertising and create DoS attacks.
+</p>
+</div>
+<hr>
+<center><div class="x"><h2>Example </h2></div></center>
+<hr><div class="b">
+<p>Let’s take an example to understand how it works. We have a vulnerable webpage that we got by the metasploitablemachine. Now we will test the field that is highlighted in red arrow for XSS.
+</p>
+￼
+
+<p>First of all, we make a simple alert script
+</p>
+
+<p><script> alert(‘I am Vulnerable’)</script>
+</p>
+</div>
+￼
+<hr>
+<center><div class="x"><h2>Types of XSS Attacks</h2></div></center>
+<hr><div class="b">
+<p>XSS attacks are often divided into three types −
+</p>
+
+<li><b>Persistent XSS</b>, where the malicious string originates from the website's database.
+</li>
+
+<li><b>Reflected XSS</b>, where the malicious string originates from the victim's request.
+
+<li><b>DOM-based XSS</b>, where the vulnerability is in the client-side code rather than the server-side code.
+
+<p>Generally, cross-site scripting is found by <b>vulnerability scanners</b> so that you don’t have to do all the manual job by putting a JavaScript on it like
+
+<p><script> alert('XSS')</script>
+</p>
+
+<p><b>Burp Suite</b> and <b>acunetix</b> are considered as the best vulnerability scanners.
+</div>
+
+<hr>
+<center><div class="x"><h2>Quick Tip </h2></div></center>
+<hr><div class="b">
+<p>To prevent XSS attacks, keep the following points in mind −
+</p>
+
+<li>Check and validate all the form fields like hidden forms, headers, cookies, query strings.
+</li>
+
+<li>Implement a stringent security policy. Set character limitation in the input fields.
+</li>
+</div>
+<hr>
+  </body>
+</html>

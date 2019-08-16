@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>17.Enumeration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style media="screen">
+    body{
+      background-image: url(data_science.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
+  </head>
+  <link rel="stylesheet" href="text_tut.css">
+  <body>
+    <hr>
+    <center><div class="y"><h1>Enumeration </h1></div></center>
+    <hr><div class="b">
+    <p>Enumeration belongs to the first phase of Ethical Hacking, i.e., “Information Gathering”. This is a process where the attacker establishes an active connection with the victim and try to discover as much attack vectors as possible, which can be used to exploit the systems further.
+</p>
+
+<p>Enumeration can be used to gain information on −
+</p>
+
+<li>Network shares</li>
+
+<li>SNMP data, if they are not secured properly</li>
+
+<li>IP tables</li>
+
+<li>Usernames of different systems</li>
+
+<li>Passwords policies lists</li>
+
+<p>Enumerations depend on the services that the systems offer. They can be −
+</p>
+
+<li>DNS enumeration</li>
+
+<li>NTP enumeration</li>
+
+<li>SNMP enumeration</li>
+
+<li>Linux/Windows enumeration</li>
+
+<li>SMB enumeration</li>
+
+<p>Let us now discuss some of the tools that are widely used for Enumeration.
+</p>
+</div>
+<hr>
+<center><div class="x"><h2>NTP Suite</h2></div></center>
+<hr><div class="b">
+<p>NTP Suite is used for NTP enumeration. This is important because in a network environment, you can find other primary servers that help the hosts to update their times and you can do it without authenticating the system.
+</p>
+
+<p>Take a look at the following example.
+</p>
+
+<p>ntpdate 192.168.1.100 01 Sept 12:50:49 ntpdate[627]:adjust time server 192.168.1.100 offset 0.005030 secorntpdc [-ilnps] [-c command] [hostname/IP_address]root@test]# ntpdc -c sysinfo 192.168.1.100***Warning changing to older implementation***Warning changing the request packet size from 160 to 48system peer: 192.168.1.101system peer mode: clientleap indicator: 00stratum: 5precision: -15root distance: 0.00107 sroot dispersion: 0.02306 sreference ID: [192.168.1.101]reference time: f66s4f45.f633e130, Sept 01 2016 22:06:23.458system flags: monitor ntp stats calibratejitter: 0.000000 sstability: 4.256 ppmbroadcastdelay: 0.003875 sauthdelay: 0.000107 s
+</p>
+</div>
+<hr>
+<center><div class="x"><h2>enum4linux</h2></div></center>
+<hr><div class="b">
+<p>enum4linux is used to enumerate Linux systems. Take a look at the following screenshot and observe how we have found the usernames present in a target host.
+</p>
+￼</div>
+<hr>
+<center><div class="x"><h2>smtp-user-enum</h2></div></center>
+<hr><div class="b">
+<p>smtp-user-enum tries to guess usernames by using SMTP service. Take a look at the following screenshot to understand how it does so.
+</p>
+￼</div>
+<hr>
+<center><div class="x"><h2>Quick Fix</h2></div></center>
+<hr><div class="b">
+<p>It is recommended to disable all services that you don’t use. It reduces the possibilities of OS enumeration of the services that your systems are running.
+</p>
+</div>
+<hr>
+  </body>
+</html>

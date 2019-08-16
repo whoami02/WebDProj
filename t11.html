@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>11. Fingerprinting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style media="screen">
+    body{
+      background-image: url(th2FVDYJ4X.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
+  </head>
+  <link rel="stylesheet" href="text_tut.css">
+  <body>
+
+    <hr>
+    <center><div class="y"><h1>Fingerprinting</h1></div></center>
+    <hr><div class="b">
+    <p>The term OS fingerprinting in Ethical Hacking refers to any method used to determine what operating system is running on a remote computer. This could be −
+    </p>
+
+     <ul><li><b>Active Fingerprinting</b> − Active fingerprinting is accomplished by sending specially crafted packets to a target machine and then noting down its response and analyzing the gathered information to determine the target OS. In the following section, we have given an example to explain how you can use NMAP tool to detect the OS of a target domain.
+     </li>
+
+      <li><b>Passive Fingerprinting</b> − Passive fingerprinting is based on sniffer traces from the remote system. Based on the sniffer traces (such as Wireshark) of the packets, you can determine the operating system of the remote host.
+      </li></ul>
+
+  <p>We have the following four important elements that we will look at to determine the operating system −
+       </p>
+
+       <ul><li><b>TTL</b> − What the operating system sets the <b>Time-To-Live</b> on the outbound packet.</li>
+
+           <li><b>Window Size</b> − What the operating system sets the Window Size at.</li>
+
+              <li><b>DF</b> − Does the operating system set the <b>Don't Fragment bit</b>.</li>
+
+           <li><b>TOS</b> − Does the operating system set the <b>Type of Service</b>, and if so, at what.</li>
+</ul>
+          <p>By analyzing these factors of a packet, you may be able to determine the remote operating system. This system is not 100% accurate, and works better for some operating systems than others.
+          </p>
+</div>
+          <hr>
+          <center><div class="x"><h2>Basic Step</h2></center></div>
+          <hr><div class="b">
+          <p>Before attacking a system, it is required that you know what operating system is hosting a website. Once a target OS is known, then it becomes easy to determine which vulnerabilities might be present to exploit the target system.
+          </p>
+
+          <p>Below is a simple <b>nmap</b> command which can be used to identify the operating system serving a website and all the opened ports associated with the domain name, i.e., the IP address.
+
+            <p>$nmap -O -v tutorialspoint.com
+            </p>
+
+             <p>It will show you the following sensitive information about the given domain name or IP address −
+             </p>
+
+             <p><font color="red">Starting Nmap 5.51 ( http://nmap.org ) at 2015-10-04 09:57 CDTInitiating Parallel DNS resolution of 1 host. at 09:57Completed Parallel DNS resolution of 1 host. at 09:57, 0.00s elapsedInitiating SYN Stealth Scan at 09:57Scanning tutorialspoint.com (66.135.33.172) [1000 ports]Discovered open port 22/tcp on 66.135.33.172Discovered open port 3306/tcp on 66.135.33.172Discovered open port 80/tcp on 66.135.33.172Discovered open port 443/tcp on 66.135.33.172Completed SYN Stealth Scan at 09:57, 0.04s elapsed (1000 total ports)Initiating OS detection (try #1) against tutorialspoint.com (66.135.33.172)Retrying OS detection (try #2) against tutorialspoint.com (66.135.33.172)Retrying OS detection (try #3) against tutorialspoint.com (66.135.33.172)Retrying OS detection (try #4) against tutorialspoint.com (66.135.33.172)Retrying OS detection (try #5) against tutorialspoint.com (66.135.33.172)Nmap scan report for tutorialspoint.com (66.135.33.172)Host is up (0.000038s latency).Not shown: 996 closed portsPORT STATE SERVICE22/tcp open ssh80/tcp open http443/tcp open https3306/tcp open mysqlTCP/IP fingerprint:OS:SCAN(V=5.51%D=10/4%OT=22%CT=1%CU=40379%PV=N%DS=0%DC=L%G=Y%TM=56113E6D%P=OS:x86_64-redhat-linux-gnu)SEQ(SP=106%GCD=1%ISR=109%TI=Z%CI=Z%II=I%TS=A)OPSOS:(O1=MFFD7ST11NW7%O2=MFFD7ST11NW7%O3=MFFD7NNT11NW7%O4=MFFD7ST11NW7%O5=MFFOS:D7ST11NW7%O6=MFFD7ST11)WIN(W1=FFCB%W2=FFCB%W3=FFCB%W4=FFCB%W5=FFCB%W6=FFOS:CB)ECN(R=Y%DF=Y%T=40%W=FFD7%O=MFFD7NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%AOS:=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%OS:Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=OS:A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=OS:Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%OS:T=40%CD=S)
+            </font></p>
+
+          <p>If you do not have nmap command installed on your Linux system, then you can install it using the following yumcommand −
+          </p>
+
+           <p><font color="green">$yum install nmap</font>
+          </p>
+
+           <p>You can go through nmap command in detail to check and understand the different features associated with a system and secure it against malicious attacks.
+           </p>
+           <hr>
+</div>
+           <center><div class="x"><h3>Quick Fix</h3></div></center>
+           <div class="b">
+           <p>You can hide your main system behind a secure proxy server or a VPN so that your complete identity is safe and ultimately your main system remains safe.
+           </p>
+           </div>
+<hr>
+           <center><div class="x"><h2>Port Scanning</h2></div></center>
+<hr>
+           <div class="b"><p>We have just seen information given by <b>nmap</b> command. This command lists down all the open ports on a given server.
+           </p>
+
+             <p>PORT STATE SERVICE22/tcp open ssh80/tcp open http443/tcp open https3306/tcp open mysql
+            </p>
+
+            <p>You can also check if a particular port is opened or not using the following command −
+            </p>
+
+           <p><font color="green">$nmap -sT -p 443 tutorialspoint.com</font>
+          </p>
+            <p>It will produce the following result −
+           </p>
+
+           <p><font color="red">Starting Nmap 5.51 ( http://nmap.org ) at 2015-10-04 10:19 CDTNmap scan report for tutorialspoint.com (66.135.33.172)Host is up (0.000067s latency).PORT STATE SERVICE443/tcp open httpsNmap done: 1 IP address (1 host up) scanned in 0.04 seconds
+          </font></p>
+
+            <p>Once a hacker knows about open ports, then he can plan different attack techniques through the open ports.
+          </p>
+          <hr>
+</div>
+          <center><div class="x"><h3>Quick fix</h3></div></center>
+          <div class="b">
+          <p>It is always recommended to check and close all the unwanted ports to safeguard the system from malicious attacks.
+          </p>
+</div>
+  <hr>
+          <center><div class="x"><h2>Ping Sweep</h2></div></center>
+          <hr><div class="b">
+          <p>A ping sweep is a network scanning technique that you can use to determine which IP address from a range of IP
+             addresses map to live hosts. Ping Sweep is also known as <b>ICMP sweep.</b>
+
+
+          <p>You can use <b>fping</b> command for ping sweep. This command is a ping-like program which uses the Internet Control Message Protocol (ICMP) echo request to determine if a host is up.
+
+          <p><b>fping</b> is different from <b>ping</b> in that you can specify any number of hosts on the command line, or specify a file containing the lists of hosts to ping. If a host does not respond within a certain time limit and/or retry limit, it will be considered unreachable.
+            <hr>
+</div>
+            <center><div class="x"><h3>Quick Fix</h3></div></center>
+             <div class="b">
+            <p>To disable ping sweeps on a network, you can block ICMP ECHO requests from outside sources. This can be done using the following command which will create a firewall rule in <b>iptable.</b>
+            </p>
+
+            <p>$iptables -A OUTPUT -p icmp --icmp-type echo-request -j DROP
+            </p>
+
+            </div><hr>
+            <center><div class="x"><h2>DNS Enumeration</h2></div></center>
+            <hr><div class="b">
+            <p>Domain Name Server (DNS) is like a map or an address book. In fact, it is like a distributed database which is used to translate an IP address 192.111.1.120 to a name www.example.com and vice versa.
+            </p>
+
+            <p>DNS enumeration is the process of locating all the DNS servers and their corresponding records for an organization. The idea is to gather as much interesting details as possible about your target before initiating an attack.
+            </p>
+
+             <p>You can use <b>nslookup</b> command available on Linux to get DNS and host-related information. In addition, you can use the following <b>DNSenum</b> script to get detailed information about a domain −
+
+              <p>DNSenum.pl
+             </p>
+
+             <p><b>DNSenum</b> script can perform the following important operations −
+             </p>
+
+               <p><br>Get the host's addresses
+
+                <br>Get the nameservers
+
+                <br>Get the MX record
+
+
+               <br>Perform <b>axfr</b> queries on nameservers
+
+              <br>Get extra names and subdomains via <b>Google scraping
+
+               <br>Brute force subdomains from file can also perform recursion on subdomain that has NS records
+
+             <br>Calculate C class domain network ranges and perform <b>whois</b> queries on them
+
+               <br>Perform <b>reverse lookups on netranges</b><hr>
+</div>
+               <center><div class="x"><h3>Quick Fix</h3></div></center>
+               <div class="b">
+               <p>DNS Enumeration does not have a quick fix and it is really beyond the scope of this tutorial. Preventing DNS Enumeration is a big challenge.
+          </p>
+
+          <p>If your DNS is not configured in a secure way, it is possible that lots of sensitive information about the network and organization can go outside and an untrusted Internet user can perform a DNS zone transfer.
+          </p></div><hr>
+
+  </body>
+</html>

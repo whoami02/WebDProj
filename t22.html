@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>22.Password Hacking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style media="screen">
+    body{
+      background-image: url(data_science.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
+  </head>
+  <link rel="stylesheet" href="text_tut.css">
+  </head>
+  <body>
+    <hr>
+    <center><div class="y"><h1>Password Hacking</h1></div></center>
+    <hr><div class="b">
+    <p>We have passwords for emails, databases, computer systems, servers, bank accounts, and virtually everything that we want to protect. Passwords are in general the keys to get access into a system or an account.
+</p>
+
+<p>In general, people tend to set passwords that are easy to remember, such as their date of birth, names of family members, mobile numbers, etc. This is what makes the passwords weak and prone to easy hacking.
+</p>
+
+<p>One should always take care to have a strong password to defend their accounts from potential hackers. A strong password has the following attributes −
+</p>
+
+<li>Contains at least 8 characters.
+</li>
+
+<li>A mix of letters, numbers, and special characters.
+</li>
+
+<li>A combination of small and capital letters.
+</li>
+</div>
+<hr>
+<center><div class="x"><h2>Dictionary Attack</h2></div></center>
+<hr><div class="b">
+<p>In a dictionary attack, the hacker uses a predefined list of words from a dictionary to try and guess the password. If the set password is weak, then a dictionary attack can decode it quite fast.
+</p>
+
+<p><b>Hydra</b> is a popular tool that is widely used for dictionary attacks. Take a look at the following screenshot and observe how we have used Hydra to find out the password of an FTP service.
+</p>
+￼</div>
+<hr>
+<center><div class="x"><h2>Hybrid Dictionary Attack</h2></div></center>
+<hr><div class="b">
+<p>Hybrid dictionary attack uses a set of dictionary words combined with extensions. For example, we have the word “admin” and combine it with number extensions such as “admin123”, “admin147”, etc.
+</p>
+
+<p><b>Crunch</b> is a wordlist generator where you can specify a standard character set or a character set. Crunch can generate all possible combinations and permutations. This tool comes bundled with the Kali distribution of Linux.
+</p>
+￼</div>
+<hr>
+<center><div class="x"><h2>Brute-Force Attack</h2></div></center>
+<hr><div class="b">
+<p>In a brute-force attack, the hacker uses all possible combinations of letters, , numbers, special characters, and small and capital letters to break the password. This type of attack has a high probability of success, but it requires an enormous amount of time to process all the combinations. A brute-force attack is slow and the hacker might require a system with high processing power to perform all those permutations and combinations faster.
+</p>
+
+<p><b>John the Ripper</b> or <b>Johnny</b> is one of the powerful tools to set a brute-force attack and it comes bundled with the Kali distribution of Linux.
+
+￼</div>
+<hr>
+<center><div class="x"><h2>Rainbow Tables</h2></div></center>
+<hr><div class="b">
+<p>A rainbow table contains a set of predefined passwords that are hashed. It is a lookup table used especially in recovering plain passwords from a cipher text. During the process of password recovery, it just looks at the pre-calculated hash table to crack the password. The tables can be downloaded from <a href="#"><font color="red">http://project-rainbowcrack.com/table.htm</font></a>
+</p>
+
+<p>RainbowCrack 1.6.1 is the tool to use the rainbow tables. It is available again in Kali distribution.
+</p>
+￼</div>
+<hr>
+<center><div class="x"><h2>Quick Tips</h2></div></center>
+<hr><div class="b">
+<li>Don’t note down the passwords anywhere, just memorize them.
+</li>
+
+<li>Set strong passwords that are difficult to crack.
+</li>
+
+<li>Use a combination of alphabets, digits, symbols, and capital and small letters.
+</li>
+
+<li>Don’t set passwords that are similar to their usernames.
+</li>
+</div>
+<hr>
+  </body>
+</html>

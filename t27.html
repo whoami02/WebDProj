@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>27. SQL Injection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style media="screen">
+    body{
+      background-image: url(Fog-Feel2.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
+  </head>
+  <link rel="stylesheet" href="text_tut.css">
+  </head>
+  <body>
+    <hr>
+    <center><div class="y"><h1>SQL Injection </h1></div></center>
+    <hr><div class="b">
+    <p>SQL injection is a set of SQL commands that are placed in a URL string or in data structures in order to retrieve a response that we want from the databases that are connected with the web applications. This type of attacks generally takes place on webpages developed using PHP or ASP.NET.
+</p>
+
+<p>An SQL injection attack can be done with the following intentions −
+</p>
+
+<li>To dump the whole database of a system,
+</li>
+
+<li>To modify the content of the databases, or
+</li>
+
+<li>To perform different queries that are not allowed by the application.
+</li>
+
+<p>This type of attack works when the applications don’t validate the inputs properly, before passing them to an SQL statement. Injections are normally placed put in address bars, search fields, or data fields.
+</p>
+
+<p>The easiest way to detect if a web application is vulnerable to an SQL injection attack is to use the " ‘ " character in a string and see if you get any error.
+</p>
+
+</div>
+
+<hr>
+<center><div class="y"><h1>Example 1 </h1></div></center>
+<hr><div class="b">
+<p>Let’s try to understand this concept using a few examples. As shown in the following screenshot, we have used a " ‘ " character in the Name field.
+</p>
+￼
+
+<p>Now, click the Login button. It should produce the following response −
+</p>
+￼
+
+<p>It means that the “Name” field is vulnerable to SQL injection.
+</p>
+</div>
+<hr>
+<center><div class="x"><h2>Example 2 </h2></div></center>
+<hr><div class="b">
+<p>We have this URL − <a href="http://10.10.10.101/mutillidae/index.php?page=site-footer-xssdiscussion.php"><font color="red">http://10.10.10.101/mutillidae/index.php?page=site-footer-xssdiscussion.php</font></a>
+</p>
+
+<p>And we want to test the variable “page” but observe how we have injected a " ‘ " character in the string URL.
+</p>
+￼
+
+<p>When we press Enter, it will produce the following result which is with errors.
+</p>
+￼</div>
+<hr>
+<center><div class="x"><h2>SQLMAP</h2></div></center>
+<hr><div class="b">
+<p>SQLMAP is one of the best tools available to detect SQL injections. It can be downloaded from <a href="http://sqlmap.org/"><font color="red">http://sqlmap.org/</font></a>
+</p>
+
+<p>It comes pre-compiled in the Kali distribution. You can locate it at − Applications → Database Assessment → Sqlmap.
+</p>
+
+<p>After opening SQLMAP, we go to the page that we have the SQL injection and then get the header request. From the header, we run the following command in SQL −
+</p>
+
+<p>./sqlmap.py --headers="User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:25.0)Gecko/20100101 Firefox/25.0" --cookie="security=low;PHPSESSID=oikbs8qcic2omf5gnd09kihsm7" -u '<a href="http://localhost/dvwa/vulnerabilities/sqli_blind/?id=1&Submit=Submit"><font color="red">http://localhost/dvwa/vulnerabilities/sqli_blind/?id=1&Submit=Submit#</font></a>' -level=5 risk=3 -p id --suffix="-BR" -v3
+</p>
+
+<p>The SQLMAP will test all the variables and the result will show that the parameter “id” is vulnerable, as shown in the following screenshot.
+</p>
+￼</div>
+<hr>
+<center><div class="x"><h2>SQLNinja </h2></div></center>
+<hr><div class="b">
+<p>SQLNinja is another SQL injection tool that is available in Kali distribution.
+</p>
+￼</div>
+<hr>
+<center><div class="x"><h2>JSQL Injection</h2></div></center>
+<hr><div class="b">
+<p>JSQL Injection is in Java and it makes automated SQL injections.
+</p>
+￼</div>
+<hr>
+<center><div class="x"><h2>Quick Tips</h2></div></center>
+<hr><div class="b">
+<p>To prevent your web application from SQL injection attacks, you should keep the following points in mind −
+</p>
+
+<li>Unchecked user-input to database should not be allowed to pass through the application GUI.
+</li>
+
+<li>Every variable that passes into the application should be sanitized and validated.
+</li>
+
+<li>The user input which is passed into the database should be quoted.
+</li>
+</div>
+<hr>
+  </body>
+</html>

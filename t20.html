@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>20.TCP/IP Hijacking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style media="screen">
+    body{
+      background-image: url(Fog-Feel.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
+  </head>
+  <link rel="stylesheet" href="text_tut.css">
+  <body>
+    <hr>
+    <center><div class="y"><h1>TCP/IP Hijacking</h1></div></center>
+    <hr><div class="b">
+    <p>TCP/IP Hijacking is when an authorized user gains access to a genuine network connection of another user. It is done in order to bypass the password authentication which is normally the start of a session.
+</p>
+
+<p>In theory, a TCP/IP connection is established as shown below −
+</p>
+￼
+
+<p>To hijack this connection, there are two possibilities −
+</p>
+
+<li>Find the seq which is a number that increases by 1, but there is no chance to predict it.
+</li>
+
+<li>The second possibility is to use the Man-in-the-Middle attack which, in simple words, is a type of network sniffing. For sniffing, we use tools like Wireshark or Ethercap.
+</li>
+</div>
+<hr>
+<center><div class="x"><h2>Example</h2></div></center>
+<hr><div class="b">
+<p>An attacker monitors the data transmission over a network and discovers the IP’s of two devices that participate in a connection.
+</p>
+
+<p>When the hacker discovers the IP of one of the users, he can put down the connection of the other user by DoS attack and then resume communication by spoofing the IP of the disconnected user.
+</p>
+</div>
+<hr>
+<center><div class="x"><h2>Shijack</h2></div></center>
+<hr>
+<div class="b">
+<p>In practice, one of the best TCP/IP hijack tools is Shijack. It is developed using Python language and you can download it from the following link − <a href="https://packetstormsecurity.com/sniffers/shijack.tgz"><font color="red">https://packetstormsecurity.com/sniffers/shijack.tgz</font></a>
+</p>
+
+<p>Here is an example of a Shijack command −
+</p>
+
+<p><font color="#12ff00">root:/home/root/hijack# ./shijack eth0 192.168.0.100 53517 192.168.0.200 23￼</font>
+</p>
+
+<p>Here, we are trying to hijack a Telnet connection between the two hosts.
+</p>
+</div>
+<hr>
+<center><div class="x"><h2>Hunt</h2></div></center>
+<hr><div class="b">
+<p>Hunt is another popular tool that you can use to hijack a TCP/IP connection. It can be downloaded from − https://packetstormsecurity.com/sniffers/hunt/
+</p>
+￼</div>
+<hr>
+<center><div class="x"><h2>Quick Tip</h2></div></center>
+<hr><div class="b">
+<p>All unencrypted sessions are vulnerable to TCP/IP session hijacking, so you should be using encrypted protocols as much as possible. Or, you should use double authentication techniques to keep the session secured.
+</p>
+</div>
+<hr>
+  </body>
+</html>

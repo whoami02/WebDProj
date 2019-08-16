@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style media="screen">
+    body{
+      background-image: url(th2FVDYJ4X.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
+    <title>14. ARP Poisoning</title>
+  </head>
+  <link rel="stylesheet" href="text_tut.css">
+  <body>
+    <hr>
+    <center><div class="x"><h1>ARP Poisoning</h1></div></center>
+    <hr><div class="b">
+    <p>Address Resolution Protocol (ARP) is a stateless protocol used for resolving IP addresses to machine MAC addresses. All network devices that need to communicate on the network broadcast ARP queries in the system to find out other machines’ MAC addresses. ARP Poisoning is also known as ARP Spoofing.
+</p>
+
+      <ul>Here is how ARP works −
+
+      <li>When one machine needs to communicate with another, it looks up its ARP table.</li>
+
+      <li>If the MAC address is not found in the table, the ARP_request is broadcasted over the network.</li>
+
+      <li>All machines on the network will compare this IP address to MAC address.</li>
+
+      <li>If one of the machines in the network identifies this address, then it will respond to the ARP_requestwith its IP and MAC address.</li>
+
+      <li>The requesting computer will store the address pair in its ARP table and communication will take place.</li>
+    </ul></div>
+     <hr>
+     <center><div class="y"><h2>What is ARP Spoofing?</h2></div></center>
+     <hr><div class="b">
+     <p>ARP packets can be forged to send data to the attacker’s machine.
+</p>
+
+      <li>ARP spoofing constructs a large number of forged ARP request and reply packets to overload the switch.</li>
+
+      <li>The switch is set in forwarding mode and after the ARP table is flooded with spoofed ARP responses, the attackers can sniff all network packets.</li>
+
+      <p>Attackers flood a target computer ARP cache with forged entries, which is also known as poisoning. ARP poisoning uses Man-in-the-Middle access to poison the network.
+   </p></div>
+   <hr>
+   <center><div class="y"><h2>What is MITM?</h2></div></center>
+   <hr><div class="b">
+   <p>The Man-in-the-Middle attack (abbreviated MITM, MitM, MIM, MiM, MITMA) implies an active attack where the adversary impersonates the user by creating a connection between the victims and sends messages between them. In this case, the victims think that they are communicating with each other, but in reality, the malicious actor controls the communication.
+</p>
+    ￼
+    <p>A third person exists to control and monitor the traffic of communication between two parties. Some protocols such as SSL serve to prevent this type of attack.
+</p></div>
+   <hr>
+   <center><div class="y"><h2>ARP Poisoning − Exercise</h2></div></center>
+   <hr><div class="b">
+    <p>In this exercise, we have used <b>BetterCAP</b>to perform ARP poisoning in LAN environment using VMware workstation in which we have installed Kali Linux and Ettercap tool to sniff the local traffic in LAN.
+
+    <p>For this exercise, you would need the following tools −
+</p>
+
+    <li>VMware workstation</li>
+
+    <li>Kali Linux or Linux Operating system</li>
+
+    <li>Ettercap Tool</li>
+
+    <li>LAN connection</li>
+
+    <p><b>Note</b> − This attack is possible in wired and wireless networks. You can perform this attack in local LAN.
+   </p>
+
+    <p><b>Step 1</b> − Install the VMware workstation and install the Kali Linux operating system.
+</p>
+
+    <p><b>Step 2</b> − Login into the Kali Linux using username pass “root, toor”.
+</p>
+
+    <p><b>Step 3</b> − Make sure you are connected to local LAN and check the IP address by typing the command ifconfig in the terminal.
+</p>
+
+    <p><b>Step 4</b> − Open up the terminal and type “Ettercap –G” to start the graphical version of Ettercap.
+</p>
+
+    ￼<p><b>Step 5</b> − Now click the tab “sniff” in the menu bar and select “unified sniffing” and click OK to select the interface. We are going to use “eth0” which means Ethernet connection.
+</p>
+
+    <p><b>Step 6</b> − Now click the “hosts” tab in the menu bar and click “scan for hosts”. It will start scanning the whole network for the alive hosts.
+</p>
+
+    <p><b>Step 7</b> − Next, click the “hosts” tab and select “hosts list” to see the number of hosts available in the network. This list also includes the default gateway address. We have to be careful when we select the targets.
+</p>
+
+    <p><b>Step 8</b> − Now we have to choose the targets. In MITM, our target is the host machine, and the route will be the router address to forward the traffic. In an MITM attack, the attacker intercepts the network and sniffs the packets. So, we will add the victim as “target 1” and the router address as “target 2.”
+</p>
+
+    <p>In VMware environment, the default gateway will always end with “2” because “1” is assigned to the physical machine.
+</p>
+
+    <p><b>Step 9</b> − In this scenario, our target is “192.168.121.129” and the router is “192.168.121.2”. So we will add target 1 as victim IP and target 2 as router IP.
+</p>
+
+    <p><b>Step 10</b> − Now click on “MITM” and click “ARP poisoning”. Thereafter, check the option “Sniff remote connections” and click OK.
+</p>
+
+    <p><b>Step 11</b> − Click “start” and select “start sniffing”. This will start ARP poisoning in the network which means we have enabled our network card in “promiscuous mode” and now the local traffic can be sniffed.
+</p>
+
+    <p><b>Note</b> − We have allowed only HTTP sniffing with Ettercap, so don’t expect HTTPS packets to be sniffed with this process.
+</p>
+
+  <p><b>Step 12</b> − Now it’s time to see the results; if our victim logged into some websites. You can see the results in the toolbar of Ettercap.
+</p></div>
+<hr>
+<div class="b">
+    <p>This is how sniffing works. You must have understood how easy it is to get the HTTP credentials just by enabling ARP poisoning.
+</p>
+
+   <p>ARP Poisoning has the potential to cause huge losses in company environments. This is the place where ethical hackers are appointed to secure the networks.
+</p>
+
+    <p>Like ARP poisoning, there are other attacks such as MAC flooding, MAC spoofing, DNS poisoning, ICMP poisoning, etc. that can cause significant loss to a network.
+</p>
+
+   <p>In the next chapter, we will discuss another type of attack known as DNS poisoning.
+</p>
+</div>
+<hr>
+  </body>
+</html>
